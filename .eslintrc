@@ -4,8 +4,8 @@
     "es6": true,
     "node": true
   },
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "prettier"],
   "rules": {
-    "indent": [2, 4]
+    "indent": [2, 2]
   }
 }
