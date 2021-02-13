@@ -1,0 +1,136 @@
+/*******************************************************************/
+/* CONTACT PAGE ****************************************************/
+/*******************************************************************/
+#container-contact {
+  background-color: $light;
+  section:first-child {
+    align-items: center;
+    display: flex;
+    height: 90vh;
+    h1:last-child {
+      display: none;
+    }
+  }
+  section:nth-child(2) {
+    a {
+      font-size: 5vw;
+    }
+    div {
+      display: block;
+      div {
+        a {
+          margin: 2.5vw 5vw 0 0;
+          svg {
+            transition: transform 0.5s;
+            width: 7.5vw;
+          }
+        }
+        a:hover svg {
+          transform: scale(1.1);
+          transition: transform 0.5s;
+        }
+        a:hover:after {
+          width: 0;
+        }
+      }
+    }
+  }
+  section:last-child {
+    overflow: hidden;
+    padding-top: 10vh;
+    position: relative;
+    div:first-child {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+      a {
+        -webkit-text-stroke-color: $light;
+      }
+      a:after {
+        background-color: $light;
+      }
+    }
+    div:last-child {
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 10vh;
+      width: 75vw;
+      z-index: 1;
+    }
+    img {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 40vw;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  #container-contact section:last-child img {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #container-contact {
+    section:first-child {
+      h1:first-child {
+        display: none;
+      }
+      h1:last-child {
+        display: block;
+      }
+    }
+    section:nth-child(2) div {
+      a {
+        font-size: 7.5vw;
+      }
+      div a {
+        margin: 5vw 10vw 0 0;
+        svg {
+          width: 10vw;
+        }
+      }
+    }
+    section:last-child {
+      div:last-child {
+        width: 100vw;
+      }
+      img {
+        width: 75vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  #container-contact {
+    section:nth-child(2) div {
+      a {
+        font-size: 10vw;
+      }
+      div a {
+        margin: 7.5vw 15vw 0 0;
+        svg {
+          width: 15vw;
+        }
+      }
+    }
+    section:last-child {
+      img {
+        width: 100vw;
+      }
+    }
+  }
+}
+
+@media (max-height: 767.98px) and (orientation: landscape) {
+  #container-contact section:first-child {
+    display: block;
+    height: auto;
+    padding: 10vh 0;
+  }
+}
