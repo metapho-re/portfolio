@@ -1,0 +1,291 @@
+/***************************/
+/********** Fonts **********/
+/***************************/
+@font-face {
+  font-family: "Mona Sans";
+  src: url("fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+    url("fonts/Mona-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+/**************************/
+/********** Tags **********/
+/**************************/
+:root {
+  font-family: "Mona Sans", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 300;
+  font-stretch: 100%;
+
+  color: #dcd7ba;
+  background-color: #16161d;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #dcd7ba;
+  text-decoration: none;
+}
+
+a:after {
+  display: block;
+  width: 0;
+  height: 2px;
+  content: "";
+  background-color: #dcd7ba;
+  transition: 300ms;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+body:has(menu:not(.hidden)) {
+  overflow: hidden;
+}
+
+li {
+  width: fit-content;
+}
+
+menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 2;
+}
+
+section {
+  margin-block: 64px;
+}
+
+a svg {
+  width: 64px;
+  color: #dcd7ba;
+}
+
+/**************************/
+/********** Menu **********/
+/**************************/
+#open-menu-button {
+  position: absolute;
+  top: 72px;
+  right: 72px;
+  width: 72px;
+  height: 72px;
+  border: 2px solid #dcd7ba;
+  border-radius: 36px;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+#open-menu-button:hover {
+  top: 60px;
+  right: 60px;
+  width: 96px;
+  height: 96px;
+  border-radius: 48px;
+  background-color: #dcd7ba;
+  transition: 300ms;
+}
+
+#close-menu-button {
+  position: absolute;
+  top: 72px;
+  right: 72px;
+  width: 72px;
+  height: 72px;
+  cursor: pointer;
+}
+
+#close-menu-button span {
+  position: absolute;
+  left: 36px;
+  width: 4px;
+  height: 72px;
+  border-radius: 2px;
+  background-color: #16161d;
+}
+
+#close-menu-button span:first-child {
+  transform: rotate(45deg);
+}
+
+#close-menu-button span:last-child {
+  transform: rotate(-45deg);
+}
+
+.navigation-button {
+  border: none;
+  color: #16161d;
+  background: none;
+  cursor: pointer;
+}
+
+.navigation-button:after {
+  display: block;
+  width: 0;
+  height: 2px;
+  content: "";
+  background-color: #161616;
+  transition: 300ms;
+}
+
+.navigation-button:hover:after {
+  width: 100%;
+}
+
+#animation-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/*****************************/
+/********** General **********/
+/*****************************/
+
+#app {
+  height: 100%;
+}
+
+#content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+#wrapper {
+  margin-inline: 72px;
+}
+
+.big-font {
+  font-size: 80px;
+  font-weight: 900;
+  font-stretch: 125%;
+  text-transform: uppercase;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.icon-group {
+  display: flex;
+  gap: 24px;
+}
+
+.page {
+  max-width: 992px;
+  margin: auto;
+  text-align: justify;
+}
+
+.page h1:first-child:after {
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: "";
+}
+
+/***********************************/
+/********** Page specific **********/
+/***********************************/
+#home a:after,
+#home h1:first-child:after {
+  background-image: linear-gradient(90deg, #98bb6c, #7aa89f, #7fb4ca 75%);
+}
+
+#home svg {
+  border-radius: 8px;
+  color: #16161d;
+  background-color: #dcd7ba;
+}
+
+#about a:after,
+#about h1:first-child:after {
+  background-image: linear-gradient(90deg, #957fb8, #ffa066, #ff9e3b 75%);
+}
+
+#contact {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#contact a:after,
+#contact h1:first-child:after {
+  background-image: linear-gradient(90deg, #e46876, #d27e99, #7e9cd8 75%);
+}
+
+#contact section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/***********************************/
+/********** Media queries **********/
+/***********************************/
+@media (max-width: 992px) {
+  :root {
+    font-size: 22px;
+  }
+  #wrapper {
+    margin-inline: 60px;
+  }
+  .big-font {
+    font-size: 70px;
+  }
+  .page {
+    margin-block-start: 192px;
+  }
+  #contact {
+    height: calc(100vh - 192px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 20px;
+  }
+  #wrapper {
+    margin-inline: 48px;
+  }
+  .big-font {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    font-size: 18px;
+  }
+  #wrapper {
+    margin-inline: 36px;
+  }
+  .big-font {
+    font-size: 50px;
+  }
+}

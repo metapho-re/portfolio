@@ -6,14 +6,13 @@ npm install
 
 ## Usage
 
-`npm start` will build and launch a development server with hot reload.
-`npm run build` will create a complete production bundle.
+`npm run dev`: starts the dev server
+`npm run build`: creates a production build
+`npm run preview`: serves the production build
 
 ## Built with
 
-- [Barba](https://github.com/barbajs/barba) - the AJAX page transitions
-- [GSAP](https://github.com/greensock/GreenSock-JS) - the animations
-- [Smooth Scrollbar](https://github.com/idiotWu/smooth-scrollbar) - the smooth scrollbar
+- [GSAP](https://github.com/greensock/GSAP) - the animations
 
 ## Author
 
