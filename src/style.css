@@ -258,11 +258,8 @@ a svg {
   .big-font {
     font-size: 70px;
   }
-  .page {
+  .page .big-font {
     margin-block-start: 192px;
-  }
-  #contact {
-    height: calc(100vh - 192px);
   }
 }
 
