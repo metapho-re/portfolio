@@ -198,7 +198,8 @@ a svg {
 
 .page {
   max-width: 992px;
-  margin: auto;
+  margin-block: 192px;
+  margin-inline: auto;
   text-align: justify;
 }
 
@@ -232,6 +233,11 @@ a svg {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
+  margin-block: 0;
+}
+
+#contact .big-font {
+  margin-block-start: 192px;
 }
 
 #contact a:after,
@@ -257,9 +263,6 @@ a svg {
   }
   .big-font {
     font-size: 70px;
-  }
-  .page .big-font {
-    margin-block-start: 192px;
   }
 }
 
