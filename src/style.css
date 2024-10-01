@@ -181,6 +181,7 @@ a svg {
 }
 
 .big-font {
+  font-family: "Mona Sans", Arial, sans-serif;
   font-size: 80px;
   font-weight: 900;
   font-stretch: 125%;
