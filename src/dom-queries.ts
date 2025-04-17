@@ -18,3 +18,7 @@ export const navigationButtons =
   document.querySelectorAll(".navigation-button");
 
 export const pages = document.querySelectorAll(".page");
+
+export const bullets = document.querySelectorAll(
+  ".bullet"
+) as NodeListOf<HTMLSpanElement>;

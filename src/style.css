@@ -211,6 +211,18 @@ a svg {
   content: "";
 }
 
+.bullet {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-inline-end: 0.8rem;
+  vertical-align: middle;
+  border-radius: 4px;
+  background-color: #dcd7ba;
+  transform: rotate(45deg);
+  transition: background-color 2s;
+}
+
 /***********************************/
 /********** Page specific **********/
 /***********************************/
