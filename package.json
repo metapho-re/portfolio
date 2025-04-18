@@ -13,13 +13,13 @@
   "author": "Pierre-Alain Castella",
   "license": "ISC",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
-    "eslint": "^8.56.0",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.11"
+    "@typescript-eslint/eslint-plugin": "^8.30.1",
+    "@typescript-eslint/parser": "^8.30.1",
+    "eslint": "^9.25.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.2"
   },
   "dependencies": {
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.7"
   }
 }
