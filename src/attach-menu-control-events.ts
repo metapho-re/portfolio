@@ -1,14 +1,24 @@
 import { closeMenu } from "./close-menu";
-import { body, openMenuButton, closeMenuButton } from "./dom-queries";
+import { openMenuButton, closeMenuButton } from "./dom-queries";
 import { getAnimationLayer } from "./get-animation-layer";
 import { openMenu } from "./open-menu";
 
 export const attachMenuControlEvents = (): (() => void) => {
-  const { width, height } = body.getBoundingClientRect();
-  const animationLayer = getAnimationLayer(width, height);
-  const radius = Math.sqrt(
-    Math.pow(width - 108, 2) + Math.pow(height - 108, 2)
-  );
+  let width: number;
+  let height: number;
+  let radius: number;
+  let animationLayer: HTMLDivElement;
+
+  const setValues = () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    radius = Math.sqrt(Math.pow(width - 108, 2) + Math.pow(height - 108, 2));
+    animationLayer = getAnimationLayer(width, height);
+  };
+
+  setValues();
+
+  window.addEventListener("resize", setValues);
 
   openMenuButton.addEventListener("click", () => {
     openMenu(animationLayer, radius);
