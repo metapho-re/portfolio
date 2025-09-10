@@ -21,7 +21,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
       - name: Deploy to S3 bucket
-        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude "projects/*"
+        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude "projects/*" --exclude "files/*"
       - name: Create Cloudfront invalidation for https://metapho.re
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID}} --path "/*"
       - name: Create Cloudfront invalidation for https://www.metapho.re
