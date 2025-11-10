@@ -6,6 +6,6 @@ export const pushHistoryState = (pageId: string) => {
     "",
     `${window.location.origin}/${
       urlPathnamesMap[pageId as keyof typeof urlPathnamesMap]
-    }`
+    }`,
   );
 };

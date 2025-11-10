@@ -7,11 +7,11 @@ export const app = document.querySelector("#app") as Element;
 export const content = document.querySelector("#content") as Element;
 
 export const openMenuButton = document.querySelector(
-  "#open-menu-button"
+  "#open-menu-button",
 ) as Element;
 
 export const closeMenuButton = document.querySelector(
-  "#close-menu-button"
+  "#close-menu-button",
 ) as Element;
 
 export const navigationButtons =
@@ -20,5 +20,5 @@ export const navigationButtons =
 export const pages = document.querySelectorAll(".page");
 
 export const bullets = document.querySelectorAll(
-  ".bullet"
+  ".bullet",
 ) as NodeListOf<HTMLSpanElement>;

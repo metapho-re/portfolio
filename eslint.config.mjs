@@ -1,4 +1,6 @@
 import { defineConfig, globalIgnores } from "eslint/config";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
+import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
@@ -15,7 +17,7 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-  globalIgnores(["**/dist", "**/.eslintrc.cjs"]),
+  globalIgnores(["**/dist", "**/.eslint.config.mjs"]),
   {
     extends: compat.extends(
       "eslint:recommended",
@@ -30,4 +32,10 @@ export default defineConfig([
       parser: tsParser,
     },
   },
+  {
+    rules: {
+      ...eslintConfigPrettier.rules,
+    }
+  },
+  eslintPluginPrettier,
 ]);

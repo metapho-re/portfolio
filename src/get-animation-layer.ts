@@ -1,6 +1,6 @@
 export const getAnimationLayer = (
   width: number,
-  height: number
+  height: number,
 ): HTMLDivElement => {
   const element = document.createElement("div");
 

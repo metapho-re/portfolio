@@ -4,7 +4,7 @@ import { body, menu } from "./dom-queries";
 
 export const openMenu = async (
   animationLayer: HTMLDivElement,
-  radius: number
+  radius: number,
 ): Promise<void> => {
   body.appendChild(animationLayer);
 
@@ -12,7 +12,7 @@ export const openMenu = async (
     gsap.fromTo(
       "#circle",
       { fill: colors[getRandomIndex()] },
-      { fill: "#DCD7BA", duration: 1, ease: Power1.easeIn }
+      { fill: "#DCD7BA", duration: 1, ease: Power1.easeIn },
     ),
     gsap.to("#circle", { r: radius, duration: 0.8, ease: Circ.easeInOut }),
   ]);

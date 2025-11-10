@@ -17,6 +17,8 @@
     "@typescript-eslint/eslint-plugin": "^8.46.3",
     "@typescript-eslint/parser": "^8.46.3",
     "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "stylelint": "^16.25.0",
     "stylelint-config-idiomatic-order": "^10.0.0",
     "stylelint-order": "^7.0.0",

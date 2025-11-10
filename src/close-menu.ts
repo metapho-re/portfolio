@@ -2,7 +2,7 @@ import gsap, { Circ } from "gsap";
 import { menu } from "./dom-queries";
 
 export const closeMenu = async (
-  animationLayer: HTMLDivElement
+  animationLayer: HTMLDivElement,
 ): Promise<void> => {
   await Promise.all([
     gsap.fromTo(menu, { opacity: 1 }, { opacity: 0 }),
