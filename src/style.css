@@ -3,29 +3,29 @@
 /***************************/
 @font-face {
   font-family: "Mona Sans";
+  font-stretch: 75% 125%;
+  font-weight: 200 900;
   src: url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
     url("/fonts/Mona-Sans.woff2") format("woff2-variations");
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
 }
 
 /**************************/
 /********** Tags **********/
 /**************************/
 :root {
-  font-family: "Mona Sans", Arial, sans-serif;
-  font-size: 22px;
-  line-height: 1.5;
-  font-weight: 400;
-  font-stretch: 100%;
-
-  color: #dcd7ba;
   background-color: #16161d;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  color: #dcd7ba;
+  font-family: "Mona Sans", Arial, sans-serif;
+  font-size: 22px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-stretch: 100%;
+
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -37,8 +37,8 @@ a:after {
   display: block;
   width: 0;
   height: 2px;
-  content: "";
   background-color: #dcd7ba;
+  content: "";
   transition: 300ms;
 }
 
@@ -61,17 +61,17 @@ li {
 
 menu {
   position: absolute;
+  z-index: 2;
   top: 0;
   left: 0;
+  display: flex;
   width: 100vw;
   height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin: 0;
   padding: 0;
-  z-index: 2;
+  margin: 0;
 }
 
 section {
@@ -95,8 +95,8 @@ a svg {
   border: 2px solid #dcd7ba;
   border-radius: 36px;
   backdrop-filter: blur(2px);
-  transition: 300ms;
   cursor: pointer;
+  transition: 300ms;
 }
 
 #open-menu-button:hover {
@@ -137,8 +137,8 @@ a svg {
 
 .navigation-button {
   border: none;
-  color: #16161d;
   background: none;
+  color: #16161d;
   cursor: pointer;
 }
 
@@ -146,8 +146,8 @@ a svg {
   display: block;
   width: 0;
   height: 2px;
-  content: "";
   background-color: #161616;
+  content: "";
   transition: 300ms;
 }
 
@@ -159,9 +159,9 @@ a svg {
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
 /*****************************/
@@ -184,8 +184,8 @@ a svg {
 .big-font {
   font-family: "Mona Sans", Arial, sans-serif;
   font-size: 80px;
-  font-weight: 900;
   font-stretch: 125%;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -216,12 +216,12 @@ a svg {
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  margin-inline-end: 0.8rem;
-  vertical-align: middle;
   border-radius: 4px;
   background-color: #dcd7ba;
+  margin-inline-end: 0.8rem;
   transform: rotate(45deg);
   transition: background-color 2s;
+  vertical-align: middle;
 }
 
 /***********************************/
@@ -234,8 +234,8 @@ a svg {
 
 #home svg {
   border-radius: 8px;
-  color: #16161d;
   background-color: #dcd7ba;
+  color: #16161d;
 }
 
 #about a:after,
@@ -244,8 +244,8 @@ a svg {
 }
 
 #contact {
-  height: 100vh;
   display: grid;
+  height: 100vh;
   grid-template-rows: auto 1fr;
   margin-block: 0;
 }
