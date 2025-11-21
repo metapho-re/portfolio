@@ -29,20 +29,25 @@
 }
 
 a {
+  position: relative;
   color: #dcd7ba;
   text-decoration: none;
+  transition: color 300ms ease;
 }
 
-a:after {
+a::after {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
   display: block;
   width: 0;
   height: 2px;
   background-color: #dcd7ba;
   content: "";
-  transition: 300ms;
+  transition: width 300ms ease;
 }
 
-a:hover:after {
+a:hover::after {
   width: 100%;
 }
 
@@ -72,15 +77,33 @@ menu {
   justify-content: space-evenly;
   padding: 0;
   margin: 0;
+  background-color: #16161d;
 }
 
 section {
-  margin-block: 64px;
+  padding: 32px;
+  border: 1px solid rgb(220 215 186 / 10%);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  background-color: rgb(220 215 186 / 2%);
+  margin-block: 48px;
+  transition: all 300ms ease;
+}
+
+section:hover {
+  border-color: rgb(220 215 186 / 20%);
+  background-color: rgb(220 215 186 / 4%);
+  box-shadow: 0 8px 32px rgb(220 215 186 / 2%);
+  transform: translateY(-2px);
 }
 
 a svg {
   width: 64px;
   color: #dcd7ba;
+}
+
+a:hover svg {
+  transform: translateY(-2px);
 }
 
 /**************************/
@@ -96,7 +119,7 @@ a svg {
   border-radius: 36px;
   backdrop-filter: blur(2px);
   cursor: pointer;
-  transition: 300ms;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #open-menu-button:hover {
@@ -106,7 +129,7 @@ a svg {
   height: 96px;
   border-radius: 48px;
   background-color: #dcd7ba;
-  transition: 300ms;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #close-menu-button {
@@ -116,6 +139,11 @@ a svg {
   width: 72px;
   height: 72px;
   cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+#close-menu-button:hover {
+  transform: rotate(90deg);
 }
 
 #close-menu-button span {
@@ -124,7 +152,7 @@ a svg {
   width: 4px;
   height: 72px;
   border-radius: 2px;
-  background-color: #16161d;
+  background-color: #dcd7ba;
 }
 
 #close-menu-button span:first-child {
@@ -138,20 +166,57 @@ a svg {
 .navigation-button {
   border: none;
   background: none;
-  color: #16161d;
   cursor: pointer;
+  transition: all 300ms ease;
 }
 
-.navigation-button:after {
+.navigation-button[data-page="home"] {
+  background: linear-gradient(135deg, #98bb6c 0%, #7aa89f 50%, #7fb4ca 100%);
+  background-clip: text;
+  filter: drop-shadow(0 0 16px rgb(122 168 159 / 20%));
+  -webkit-text-fill-color: transparent;
+}
+
+.navigation-button[data-page="about"] {
+  background: linear-gradient(135deg, #957fb8 0%, #ffa066 50%, #ff9e3b 100%);
+  background-clip: text;
+  filter: drop-shadow(0 0 16px rgb(255 160 102 / 20%));
+  -webkit-text-fill-color: transparent;
+}
+
+.navigation-button[data-page="contact"] {
+  background: linear-gradient(135deg, #e46876 0%, #d27e99 50%, #7e9cd8 100%);
+  background-clip: text;
+  filter: drop-shadow(0 0 16px rgb(210 126 153 / 20%));
+  -webkit-text-fill-color: transparent;
+}
+
+.navigation-button:hover {
+  transform: scale(1.05);
+}
+
+.navigation-button[data-page="home"]::after {
+  background: linear-gradient(90deg, transparent, #98bb6c, #7aa89f, #7fb4ca, transparent);
+}
+
+.navigation-button[data-page="about"]::after {
+  background: linear-gradient(90deg, transparent, #957fb8, #ffa066, #ff9e3b, transparent);
+}
+
+.navigation-button[data-page="contact"]::after {
+  background: linear-gradient(90deg, transparent, #e46876, #d27e99, #7e9cd8, transparent);
+}
+
+.navigation-button::after {
   display: block;
   width: 0;
   height: 2px;
-  background-color: #161616;
+  margin: 0 auto;
   content: "";
-  transition: 300ms;
+  transition: width 300ms ease;
 }
 
-.navigation-button:hover:after {
+.navigation-button:hover::after {
   width: 100%;
 }
 
@@ -200,15 +265,21 @@ a svg {
 
 .page {
   max-width: 992px;
-  margin-block: 192px;
+  margin-block: 192px 0;
   margin-inline: auto;
   text-align: justify;
 }
 
-.page h1:first-child:after {
+.page h1:first-child {
+  padding-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.page h1:first-child::after {
   display: block;
   width: 100%;
   height: 8px;
+  border-radius: 4px;
   content: "";
 }
 
@@ -224,13 +295,65 @@ a svg {
   vertical-align: middle;
 }
 
+.page-footer {
+  position: relative;
+  min-height: 150px;
+  padding-top: 48px;
+  margin-block-end: 48px;
+  margin-block-start: 144px;
+  text-align: center;
+}
+
+.footer-spots {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.spot {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.4;
+}
+
+.footer-line {
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  margin-bottom: 32px;
+  opacity: 0.6;
+}
+
+.page-footer p {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+
 /***********************************/
 /********** Page specific **********/
 /***********************************/
-#home a:after,
-#home h1:first-child:after {
-  background-image: linear-gradient(90deg, #98bb6c, #7aa89f, #7fb4ca 75%);
+#home h1:first-child {
+  background: linear-gradient(135deg, #98bb6c 0%, #7aa89f 50%, #7fb4ca 100%);
+  background-clip: text;
+  filter: drop-shadow(0 0 16px rgb(122 168 159 / 20%));
+  -webkit-text-fill-color: transparent;
 }
+
+#home a::after,
+#home h1:first-child::after {
+  background-image: linear-gradient(90deg, #7fb4ca, #7aa89f, #98bb6c 75%);
+}
+
+#home .footer-line {
+  background: linear-gradient(90deg, transparent 0%, #98bb6c 25%, #7aa89f 50%, #7fb4ca 75%, transparent 100%);
+}
+
+#home .spot-1, #home .spot-4, #home .spot-7, #home .spot-10 { background-color: #98bb6c; }
+#home .spot-2, #home .spot-5, #home .spot-8, #home .spot-11 { background-color: #7aa89f; }
+#home .spot-3, #home .spot-6, #home .spot-9, #home .spot-12 { background-color: #7fb4ca; }
 
 #home svg {
   border-radius: 8px;
@@ -238,29 +361,49 @@ a svg {
   color: #16161d;
 }
 
-#about a:after,
-#about h1:first-child:after {
-  background-image: linear-gradient(90deg, #957fb8, #ffa066, #ff9e3b 75%);
+#about h1:first-child {
+  background: linear-gradient(135deg, #957fb8 0%, #ffa066 50%, #ff9e3b 100%);
+  background-clip: text;
+  filter: drop-shadow(0 0 16px rgb(122 168 159 / 20%));
+  -webkit-text-fill-color: transparent;
 }
 
-#contact {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: auto 1fr;
-  margin-block: 0;
+#about a::after,
+#about h1:first-child::after {
+  background-image: linear-gradient(90deg, #ff9e3b, #ffa066, #957fb8 75%);
 }
 
-#contact .big-font {
-  margin-block-start: 192px;
+#about .footer-line {
+  background: linear-gradient(90deg, transparent 0%, #957fb8 25%, #ffa066 50%, #ff9e3b 75%, transparent 100%);
 }
 
-#contact a:after,
-#contact h1:first-child:after {
-  background-image: linear-gradient(90deg, #e46876, #d27e99, #7e9cd8 75%);
+#about .spot-1, #about .spot-4, #about .spot-7, #about .spot-10 { background-color: #ff9e3b; }
+#about .spot-2, #about .spot-5, #about .spot-8, #about .spot-11 { background-color: #ffa066; }
+#about .spot-3, #about .spot-6, #about .spot-9, #about .spot-12 { background-color: #957fb8; }
+
+#contact h1:first-child {
+  background: linear-gradient(135deg, #e46876 0%, #d27e99 50%, #7e9cd8 100%);
+  background-clip: text;
+  filter: drop-shadow(0 0 16px rgb(122 168 159 / 20%));
+  -webkit-text-fill-color: transparent;
 }
+
+#contact a::after,
+#contact h1:first-child::after {
+  background-image: linear-gradient(90deg, #7e9cd8, #d27e99, #e46876 75%);
+}
+
+#contact .footer-line {
+  background: linear-gradient(90deg, transparent 0%, #e46876 25%, #d27e99 50%, #7e9cd8 75%, transparent 100%);
+}
+
+#contact .spot-1, #contact .spot-4, #contact .spot-7, #contact .spot-10 { background-color: #e46876; }
+#contact .spot-2, #contact .spot-5, #contact .spot-8, #contact .spot-11 { background-color: #d27e99; }
+#contact .spot-3, #contact .spot-6, #contact .spot-9, #contact .spot-12 { background-color: #7e9cd8; }
 
 #contact section {
   display: flex;
+  height: 50vh;
   align-items: center;
   justify-content: center;
 }
