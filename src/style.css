@@ -111,6 +111,7 @@ a:hover svg {
 /**************************/
 #open-menu-button {
   position: absolute;
+  z-index: 1;
   top: 72px;
   right: 72px;
   width: 72px;
